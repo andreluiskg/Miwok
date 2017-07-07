@@ -6,20 +6,20 @@ package com.andre.android.miwok;
 
 public class Word {
 
-    private String mMiwokWord;
     private String mDefaultWord;
+    private String mMiwokWord;
 
-    public Word(String miwokWord, String defaultWord) {
-        this.mMiwokWord = miwokWord;
+    public Word(String defaultWord, String miwokWord) {
         this.mDefaultWord = defaultWord;
-    }
-
-    public String getmMiwokWord() {
-        return mMiwokWord;
+        this.mMiwokWord = miwokWord;
     }
 
     public String getmDefaultWord() {
         return mDefaultWord;
+    }
+
+    public String getmMiwokWord() {
+        return mMiwokWord;
     }
 
 

@@ -25,7 +25,7 @@ public class NumbersActivity extends AppCompatActivity {
 //        words.add("nine");
 //        words.add("ten");
         ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word("lutti", "one"));
+        words.add(new Word("one", "lutti"));
         words.add(new Word("two", "otiiko"));
         words.add(new Word("three", "tolookosu"));
         words.add(new Word("four", "oyyisa"));
