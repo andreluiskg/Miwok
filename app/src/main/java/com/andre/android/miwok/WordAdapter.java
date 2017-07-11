@@ -1,6 +1,7 @@
 package com.andre.android.miwok;
 
 import android.app.Activity;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,11 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Activity context, ArrayList<Word> word) {
+    private int mColorResourceId;
+
+    public WordAdapter(Activity context, ArrayList<Word> word, int colorResourceId) {
         super(context, 0, word);
+        mColorResourceId = colorResourceId;
     }
 
     @Override
@@ -25,7 +29,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
@@ -56,6 +59,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
         } else {
             imageView.setVisibility(View.GONE);
         }
+
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        textContainer.setBackgroundColor(color);
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
