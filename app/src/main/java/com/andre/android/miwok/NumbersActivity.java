@@ -67,7 +67,6 @@ public class NumbersActivity extends AppCompatActivity {
                 mMediaPlayer = MediaPlayer.create(NumbersActivity.this,
                         words.get(position).getAudioResourceId());
                 mMediaPlayer.start();
-                mMediaPlayer.release();
             }
 
         });

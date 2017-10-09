@@ -47,7 +47,6 @@ public class FamilyActivity extends AppCompatActivity {
                 mMediaPlayer = MediaPlayer.create(FamilyActivity.this,
                         words.get(position).getAudioResourceId());
                 mMediaPlayer.start();
-                mMediaPlayer.release();
             }
 
         });

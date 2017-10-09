@@ -41,7 +41,6 @@ public class ColorsActivity extends AppCompatActivity {
                 mMediaPlayer = MediaPlayer.create(ColorsActivity.this,
                         words.get(position).getAudioResourceId());
                 mMediaPlayer.start();
-                mMediaPlayer.release();
             }
 
         });

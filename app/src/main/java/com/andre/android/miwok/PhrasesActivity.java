@@ -43,7 +43,6 @@ public class PhrasesActivity extends AppCompatActivity {
                 mMediaPlayer = MediaPlayer.create(PhrasesActivity.this,
                         words.get(position).getAudioResourceId());
                 mMediaPlayer.start();
-                mMediaPlayer.release();
             }
 
         });
