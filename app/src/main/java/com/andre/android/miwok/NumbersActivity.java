@@ -1,18 +1,25 @@
 package com.andre.android.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
+
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+        mediaPlayer=MediaPlayer.create(this,R.raw.number_one);
 //        ArrayList<String> words = new ArrayList<String>();
 //        words.add("one");
 //        words.add("two");
@@ -50,9 +57,17 @@ public class NumbersActivity extends AppCompatActivity {
 //        ListView listView = (ListView) findViewById(R.id.list);
 //        listView.setAdapter(itemsAdapter);
         WordAdapter wordAdapter =
-                new WordAdapter(this, words,R.color.category_numbers);
+                new WordAdapter(this, words, R.color.category_numbers);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(wordAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mediaPlayer.start();
+            }
+
+        });
     }
+
 }
