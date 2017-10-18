@@ -1,6 +1,7 @@
 package com.andre.android.miwok;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -55,6 +56,11 @@ public class ColorsFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Called when the Fragment is no longer started.  This is generally
+     * tied to {@link Activity#onStop() Activity.onStop} of the containing
+     * Activity's lifecycle.
+     */
     @Override
     public void onStop() {
         super.onStop();
